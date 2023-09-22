@@ -2,6 +2,8 @@ import Image from "next/image";
 import Nav from "../components/nav";
 import Hero from "@/components/hero";
 import Divider from "@/components/devider";
+import About from "@/components/about";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -11,6 +13,9 @@ export default function Home() {
         <Hero />
       </div>
       <Divider />
+      <About />
+      <Divider />
+      <Projects />
     </main>
   );
 }
