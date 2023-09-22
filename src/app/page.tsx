@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Nav from "../components/nav";
 import Hero from "@/components/hero";
+import Divider from "@/components/devider";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="flex justify-center items-center px-4">
         <Hero />
       </div>
+      <Divider />
     </main>
   );
 }
