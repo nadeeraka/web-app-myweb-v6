@@ -30,10 +30,13 @@ export default function Nav() {
           ))}
         </div>
       </motion.div> */}
-      <div
-        className="fixed top-0  h-[4.5rem] w-full rounded-none border border-white border-opacity-40
+      {/* className="fixed top-0  h-[4.5rem] w-full rounded-none border border-white border-opacity-40
        bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]
-        sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+        sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75" */}
+      <div
+        className="fixed top-6 flex justify-center items-center flex-wrap flex-shrink-0 h-[4.5rem]  w-full rounded-none border border-white border-opacity-40
+     text-xs  bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]
+        sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75 sm:text-sm"
       >
         {/* lg:h-[5.7%] lg:min-w-[64%] lg:max-w-[62%] lg:rounded-full md:h-[5%] md:w-[85%] md:min-w-[43.7%] 
        md:rounded-full   */}
@@ -41,7 +44,8 @@ export default function Nav() {
           <a
             href={hash}
             key={hash}
-            className="w-[10px] max-h-[8px]   relative top-[13px] left-[4.5rem] p-2  hover:rounded-full gap-y-1  "
+            className="w-[68px] max-h-[26px] text-gray-500  flex justify-center items-center 
+             p-2 hover:rounded-full hover:bg-slate-800  mx-1 sm:w-[90px]  sm:max-h-[40px] sm:mx-0 sm:hover:rounded-full  sm:hover:bg-slate-800"
           >
             {name}
           </a>
