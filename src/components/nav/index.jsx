@@ -46,7 +46,7 @@ export default function Nav() {
           <a
             href={hash}
             key={hash}
-            className="w-[68px] max-h-[26px] text-gray-500  flex justify-center items-center 
+            className="w-[68px] max-h-[26px] text-gray-500 font-bold  flex justify-center items-center 
              p-2 hover:rounded-full hover:bg-slate-800  mx-1 sm:w-[90px]  sm:max-h-[40px] sm:mx-0 sm:hover:rounded-full  sm:hover:bg-slate-800"
           >
             {name}

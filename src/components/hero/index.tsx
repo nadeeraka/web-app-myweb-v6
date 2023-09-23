@@ -9,7 +9,7 @@ import { FaGithub, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 export default function () {
   return (
-    <section className="text-center w-[50rem] mb-10 ">
+    <section className="text-center w-[50rem] mb-10 id='home">
       <div className="flex justify-center items-center w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.0 }}
