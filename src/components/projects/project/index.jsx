@@ -2,6 +2,7 @@
 import { title } from "process";
 import React from "react";
 import Image from "next/image";
+import clsx from "clsx";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Project({
@@ -24,15 +25,14 @@ export default function Project({
         opacity: opacityProgess,
       }}
       className="group flex flex-col justify-center items-center mb-20 mt-20
-     border-black/5   active:scale-105 hover:scale-105  transition"
+     border-black/5   active:scale-105 hover:scale-105  transition scroll-mt-64 sm:scroll-mt-72"
       id="projects"
     >
       <div
-        className={
-          number % 2
-            ? "flex justify-between w-[90%] h-[40%] bg-gray-600  leading-relaxed rounded-2xl shadow-blue-50/5 shadow-lg sm:max-w-[800px] active:bg-gray-800 hover:bg-gray-800 transition"
-            : "flex justify-between w-[90%] h-[40%] bg-gray-600  leading-relaxed rounded-2xl shadow-blue-50/5 shadow-lg sm:max-w-[800px] flex-row-reverse active:bg-gray-800 hover:bg-gray-800 transition"
-        }
+        className={clsx(
+          "flex justify-between w-[90%] h-[40%] bg-gray-600  leading-relaxed rounded-2xl shadow-blue-50/5 shadow-lg sm:max-w-[800px] active:bg-gray-800 hover:bg-gray-800 transition",
+          { "flex-row-reverse": number % 2 }
+        )}
       >
         <div className="p-4 m-3">
           <h2 className="text-center text-lg mb-4 font-bold">{title}</h2>
