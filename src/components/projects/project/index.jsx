@@ -1,6 +1,8 @@
+"use client";
 import { title } from "process";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Project({
   data: { title, description, tags, imageUrl },
@@ -26,11 +28,13 @@ export default function Project({
             ))}
           </div>
         </div>
-        <div
+        <motion.div
           className="hidden sm:inline mt-10 w-[700px] h-[250px] overflow-hidden object-fill rounded-lg 
-        
-        border-4 border-green-900 border-solid
-                    bg-green-400   "
+         border-sky-200 border-2 bg-white/80
+          "
+          initial={{ opacity: 0, rotate: 0 }}
+          animate={{ opacity: 1, scale: 0.95, rotate: 350 }}
+          transition={{ delay: 1 }}
         >
           <Image
             src={imageUrl}
@@ -38,7 +42,7 @@ export default function Project({
             alt={title}
             className="w-full scale-105"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
