@@ -25,7 +25,7 @@ export default function Project({
       }}
       className="group flex flex-col justify-center items-center mb-20 mt-20
      border-black/5   active:scale-105 hover:scale-105  transition"
-      id="project"
+      id="projects"
     >
       <div
         className={

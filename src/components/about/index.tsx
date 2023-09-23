@@ -10,7 +10,7 @@ export default function About() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       id="about"
-      className="flex justify-center items-center"
+      className="flex justify-center items-center scroll-mt-24"
     >
       <div className="container w-[800px] mr-10 ml-10 sm:mr-56 sm:ml-56 p-4">
         <div className="text-lg leading-8 text-center">

@@ -36,8 +36,8 @@ export default function Nav() {
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="fixed top-6 flex justify-center items-center flex-wrap flex-shrink-0 h-[4.5rem]  w-full rounded-none border border-white border-opacity-40
-     text-xs  bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]
+        className="fixed top-0 flex justify-center items-center flex-wrap flex-shrink-0 h-[4.5rem]  w-full rounded-none border border-white border-opacity-40
+     text-xs  bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] 
         sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75 sm:text-sm"
       >
         {/* lg:h-[5.7%] lg:min-w-[64%] lg:max-w-[62%] lg:rounded-full md:h-[5%] md:w-[85%] md:min-w-[43.7%] 
