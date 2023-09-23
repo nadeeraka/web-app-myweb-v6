@@ -4,10 +4,17 @@ import Image from "next/image";
 
 export default function Project({
   data: { title, description, tags, imageUrl },
+  number,
 }) {
   return (
     <section className="flex flex-col justify-center items-center mb-20 mt-20 border-black/5  ">
-      <div className="flex justify-between w-[90%] h-[40%] bg-gray-800  leading-relaxed rounded-2xl shadow-blue-50/5 shadow-lg sm:max-w-[800px] ">
+      <div
+        className={
+          number % 2
+            ? "flex justify-between w-[90%] h-[40%] bg-gray-800  leading-relaxed rounded-2xl shadow-blue-50/5 shadow-lg sm:max-w-[800px] "
+            : "flex justify-between w-[90%] h-[40%] bg-gray-800  leading-relaxed rounded-2xl shadow-blue-50/5 shadow-lg sm:max-w-[800px] flex-row-reverse"
+        }
+      >
         <div className="p-4 m-3">
           <h2 className="text-center text-lg mb-4 font-bold">{title}</h2>
           <p className="">{description}</p>
@@ -19,8 +26,13 @@ export default function Project({
             ))}
           </div>
         </div>
-        <div className="hidden sm:inline">
-          <Image src={imageUrl} quality={95} alt={title} />
+        <div className="hidden sm:inline mt-10 w-[700px] h-[250px] overflow-hidden object-fill rounded-lg ">
+          <Image
+            src={imageUrl}
+            quality={95}
+            alt={title}
+            className="w-full scale-x-100"
+          />
         </div>
       </div>
     </section>

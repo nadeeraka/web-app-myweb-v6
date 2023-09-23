@@ -12,7 +12,7 @@ export default function Projects() {
       </div>
       <div className="mb-10">
         {projectsData.map((data, i) => (
-          <Project key={i} data={data} />
+          <Project key={i} data={data} number={i} />
         ))}
       </div>
     </section>
