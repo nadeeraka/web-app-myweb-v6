@@ -26,12 +26,12 @@ export default function Project({
             ))}
           </div>
         </div>
-        <div className="hidden sm:inline mt-10 w-[700px] h-[250px] overflow-hidden object-fill rounded-lg ">
+        <div className="hidden sm:inline mt-10 w-[700px] h-[250px] overflow-hidden object-fill rounded-lg  ">
           <Image
             src={imageUrl}
             quality={95}
             alt={title}
-            className="w-full scale-x-100"
+            className="w-full scale-105"
           />
         </div>
       </div>
