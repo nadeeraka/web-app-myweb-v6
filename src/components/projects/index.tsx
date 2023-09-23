@@ -6,9 +6,9 @@ import Project from "./project";
 
 export default function Projects() {
   return (
-    <section>
+    <section className="mt-20">
       <div className=" flex justify-center items-center">
-        <Heading text="Projects" />
+        <Heading text="My Projects" />
       </div>
       <div className="mb-10">
         {projectsData.map((data, i) => (
