@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
+// const nextConfig = {};
+// module.exports = nextConfig;
 module.exports = {
   typescript: {
     // !! WARN !!
@@ -10,4 +10,3 @@ module.exports = {
     ignoreBuildErrors: true,
   },
 };
-module.exports = nextConfig;

@@ -26,7 +26,12 @@ export default function Project({
             ))}
           </div>
         </div>
-        <div className="hidden sm:inline mt-10 w-[700px] h-[250px] overflow-hidden object-fill rounded-lg  ">
+        <div
+          className="hidden sm:inline mt-10 w-[700px] h-[250px] overflow-hidden object-fill rounded-lg 
+        
+        border-4 border-green-900 border-solid
+                    bg-green-400   "
+        >
           <Image
             src={imageUrl}
             quality={95}
