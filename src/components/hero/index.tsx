@@ -69,7 +69,7 @@ export default function () {
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition ml-2" />
         </Link>
         <a
-          className="group w-[250px] h-[50px] opacity-40 text-black  bg-slate-50 fill-transparent mb-4
+          className="group w-[250px] h-[50px]  text-black  bg-gray-400  fill-transparent mb-4
          font-extrabold rounded-full flex items-center justify-evenly text-xl outline-none 
          focus:scale-110 hover:scale-110  active:scale-105 hover:opacity-100 transition cursor-pointer
           border-black/10 border
