@@ -4,11 +4,11 @@ import Hero from "@/components/hero";
 import Divider from "@/components/devider";
 import About from "@/components/about";
 import Projects from "@/components/projects";
-
+import ActiveSectionContextProvider from "@/context/active-section-context";
 export default function Home() {
   return (
     <main className=" ">
-      <Nav />
+      {/* <Nav /> */}
       <div className="flex justify-center items-center px-4">
         <Hero />
       </div>
@@ -16,6 +16,7 @@ export default function Home() {
       <About />
       <Divider />
       <Projects />
+      {/* </ActiveSectionContextProvider> */}
     </main>
   );
 }
