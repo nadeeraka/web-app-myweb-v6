@@ -1,58 +1,77 @@
 "use client";
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import IMG from "../../../public/img1.jpg";
-import Link from "next/link";
-import { BsArrowRight, BsDownload, BsGithub, BsLinkedin } from "react-icons/bs";
-import { FaGithub, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
-export default function () {
+import Image from "next/image";
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
+import { FaGithubSquare } from "react-icons/fa";
+import { useSectionInView } from "@/lib/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import Img from "../../../public/img1.jpg";
+
+export default function Intro() {
+  const { ref } = useSectionInView("Home", 0.5);
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
   return (
     <section
-      className="text-center w-[50rem] mb-10  scroll-m-[100rem] "
+      ref={ref}
       id="home"
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
-      <div className="flex justify-center items-center w-full">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-          className=" "
-        >
-          <Image
-            src={IMG}
-            alt=""
-            width={200}
-            height={50}
-            priority={true}
-            quality={100}
-            className="w-24 h-24 rounded-full border-white border-[3px] object-cover shadow-xl "
-          />
-        </motion.div>
+      <div className="flex items-center justify-center">
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "tween",
+              duration: 0.2,
+            }}
+          >
+            <Image
+              src={Img}
+              alt="Ricardo portrait"
+              width="192"
+              height="192"
+              quality="95"
+              priority={true}
+              className="h-24 w-24 rounded-full object-cover border-[0.20rem] border-white shadow-xl"
+            />
+          </motion.div>
+
+          {/* <motion.span
+            className="absolute bottom-0 right-0 text-4xl"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 125,
+              delay: 0.1,
+              duration: 0.7,
+            }}
+          >
+            👋
+          </motion.span> */}
+        </div>
       </div>
+
       <motion.h1
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I'm Nadeeraka.</span> I'm a{" "}
-        <span className="font-bold">software engineer</span> with{" "}
+        <span className="font-bold">I'm a software engineer </span> with{" "}
         <span className="font-bold">4 years</span> of experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">
-          front end web development{" "}
-          <span className="font-semibold  !no-underline">React Next.js</span>
-        </span>
-        .
+        <span className="underline">React (Next.js)</span>.
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row sm:justify-center items-center"
+        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -60,39 +79,38 @@ export default function () {
         }}
       >
         <Link
-          className="group w-[250px] h-[50px] bg-slate-900 rounded-full flex items-center 
-          justify-center text-xl p-4 mb-4 outline-none focus:scale-110 hover:scale-110
-          active:scale-105 hover:bg-slate-950 transition sm:mr-1"
-          href={"contact#"}
+          href="#contact"
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me here{" "}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition ml-2" />
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
+
         <a
-          className="group w-[250px] h-[50px]  text-black  bg-gray-400  fill-transparent mb-4
-         font-extrabold rounded-full flex items-center justify-evenly text-xl outline-none 
-         focus:scale-110 hover:scale-110  active:scale-105 hover:opacity-100 transition cursor-pointer
-          border-black/10 border
-      "
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
           href="/CV.pdf"
           download
         >
           Download CV{" "}
-          <BsDownload className="opacity-70 group-hover:translate-x-1 transition text-2xl" />
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
+
         <a
-          href="https://www.linkedin.com/in/nimantha-nadeeraka-b5811b278/"
-          className="w-[50px] h-[50px]  text-black bg-slate-50 fill-transparent mb-4 opacity-40
-           font-bold rounded-full flex items-center justify-evenly  text-2xl sm:mr-4 sm:ml-4 outline-none 
-           focus:scale-110 hover:scale-110 active:scale-105 hover:opacity-100 transition"
+          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          href="https://linkedin.com"
+          target="_blank"
         >
-          <FaLinkedin />
+          <BsLinkedin />
         </a>
+
         <a
-          href="https://github.com/nadeeraka"
-          className="w-[50px] h-[50px]  text-black bg-slate-50 fill-transparent opacity-40
-          mb-4 font-bold rounded-full flex items-center justify-evenly text-2xl sm:mr-4 outline-none 
-          focus:scale-110 hover:scale-110 active:scale-105 hover:opacity-100 transition"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          href="https://github.com"
+          target="_blank"
         >
           <FaGithubSquare />
         </a>

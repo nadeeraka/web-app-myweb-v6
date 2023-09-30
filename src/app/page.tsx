@@ -5,6 +5,7 @@ import Divider from "@/components/devider";
 import About from "@/components/about";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
+import Experience from "@/components/experince";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 export default function Home() {
   return (
@@ -21,7 +22,8 @@ export default function Home() {
       <div className="flex justify-center">
         <Skills />
       </div>
-
+      <Divider />
+      <Experience />
       {/* </ActiveSectionContextProvider> */}
     </main>
   );

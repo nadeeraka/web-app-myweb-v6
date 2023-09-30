@@ -6,9 +6,9 @@ import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
-  const { ref } = useSectionInView("Skills");
+  const { ref } = useSectionInView("Projects");
   return (
-    <section className="mt-20">
+    <section className="mt-20" id="Projects" ref={ref}>
       <div className=" flex justify-center items-center">
         <Heading text="My Projects" />
       </div>

@@ -2,14 +2,17 @@
 import React from "react";
 import Hading from "@/app/helpers/sectionHeding";
 import { motion } from "framer-motion";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
+  const { ref } = useSectionInView("About");
   return (
     <motion.section
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       id="about"
+      ref={ref}
       className="flex justify-center items-center scroll-mt-24"
     >
       <div className="container w-[800px] mr-10 ml-10 sm:mr-56 sm:ml-56 p-4">
