@@ -18,7 +18,10 @@ export default function Home() {
       <Divider />
       <Projects />
       <Divider />
-      <Skills />
+      <div className="flex justify-center">
+        <Skills />
+      </div>
+
       {/* </ActiveSectionContextProvider> */}
     </main>
   );
