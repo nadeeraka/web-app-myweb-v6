@@ -4,6 +4,7 @@ import Hero from "@/components/hero";
 import Divider from "@/components/devider";
 import About from "@/components/about";
 import Projects from "@/components/projects";
+import Skills from "@/components/skills";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
       <About />
       <Divider />
       <Projects />
+      <Divider />
+      <Skills />
       {/* </ActiveSectionContextProvider> */}
     </main>
   );
