@@ -1,44 +1,76 @@
 "use client";
+
 import React from "react";
-import SectionHeading from "../../app/helpers/sectionHeding";
+import SectionHeading from "@/app/helpers/sectionHeding";
+import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { FaPaperPlane } from "react-icons/fa";
+// import { sendEmail } from "@/actions/sendEmail";
+import SubmitBtn from "./submit-btn";
+import toast from "react-hot-toast";
+
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+
   return (
-    <section id="Contact" ref={ref} className="scroll-mt-28 mb-20">
-      <SectionHeading text={"Contact Me"} />
-      <div className="m-10">
-        <p>
-          Please contact me directly at{" "}
-          <a
-            href="mailto:info.nadeeraka@gmail.com"
-            className="underline font-semibold"
-          >
-            info.nadeeraka@gmail.com
-          </a>{" "}
-          or through this form.
-        </p>
-        <div className="block mt-4 mb-5">
-          <input
-            type="email"
-            className=" w-[min(100%,32rem)] sm:h-[3rem] h-[2.5rem] mb-4 rounded-lg text-left p-4
-             bg-white/70 text-black active:bg-white focus:bg-white border-none outline-none"
-            placeholder="Your Email"
-          />
-          <textarea
-            className=" w-[min(100%,32rem)] sm:h-[12rem] h-[8rem] mb-4 rounded-lg text-left p-4  bg-white/70 text-black active:bg-white focus:bg-white border-none outline-none"
-            placeholder="Your message"
-            id=""
-          />
-        </div>
-        <button className="w-[50rem h-[3rem] bg-black px-6 text-center rounded-full focus:bg-gray-600 active:bg-gray-600 hover:bg-gray-600  ">
-          <div className="flex justify-center text-lg">
-            Submit
-            <FaPaperPlane className="ml-3 mt-1" />{" "}
-          </div>
-        </button>
-      </div>
-    </section>
+    <motion.section
+      id="contact"
+      ref={ref}
+      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center mx-10"
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{
+        once: true,
+      }}
+    >
+      <SectionHeading text={"Contact me"} />
+
+      <p className="  sm:text-lg text-gray-700 -mt-6 dark:text-white/80">
+        Please contact me directly at{" "}
+        <a className="underline" href="mailto:info.nadeeraka@gmail.com">
+          info.nadeeraka@gmail.com
+        </a>{" "}
+      </p>
+
+      {/* <form
+        className="mt-10 flex flex-col dark:text-black"
+        action={(data) => {
+          console.log(data);
+        }}
+        // action={async (formData) => {
+        //   const { data, error } = await sendEmail(formData);
+
+        //   if (error) {
+        //     toast.error(error);
+        //     return;
+        //   }
+
+        //   toast.success("Email sent successfully!");
+        // }}
+      >
+        <input
+          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          name="senderEmail"
+          type="email"
+          required
+          maxLength={500}
+          placeholder="Your email"
+        />
+        <textarea
+          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          name="message"
+          placeholder="Your message"
+          required
+          maxLength={5000}
+        />
+        <SubmitBtn />
+      </form> */}
+    </motion.section>
   );
 }
