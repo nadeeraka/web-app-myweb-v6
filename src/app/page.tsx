@@ -29,10 +29,11 @@ export default function Home() {
       </div>
       <Divider />
       <Experience />
-      <Divider />
+
       <div className="flex justify-center">
         <Contact />
       </div>
+
       <div className="flex justify-center">
         <Footer />
       </div>

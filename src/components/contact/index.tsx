@@ -6,7 +6,7 @@ import { FaPaperPlane } from "react-icons/fa";
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
   return (
-    <section id="Contact" ref={ref} className="scroll-mt-28 ">
+    <section id="Contact" ref={ref} className="scroll-mt-28 mb-20">
       <SectionHeading text={"Contact Me"} />
       <div className="m-10">
         <p>
@@ -35,7 +35,7 @@ export default function Contact() {
         <button className="w-[50rem h-[3rem] bg-black px-6 text-center rounded-full focus:bg-gray-600 active:bg-gray-600 hover:bg-gray-600  ">
           <div className="flex justify-center text-lg">
             Submit
-            <FaPaperPlane className="ml-3" />{" "}
+            <FaPaperPlane className="ml-3 mt-1" />{" "}
           </div>
         </button>
       </div>
