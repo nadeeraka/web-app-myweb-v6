@@ -12,7 +12,6 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 export default function Home() {
   return (
     <main className=" ">
-      {/* <Nav /> */}
       <div className="flex justify-center items-center px-4">
         <Hero />
       </div>
@@ -28,7 +27,9 @@ export default function Home() {
         <Skills />
       </div>
       <Divider />
-      <Experience />
+      <div className="flex justify-center">
+        <Experience />
+      </div>
 
       <div className="flex justify-center">
         <Contact />
